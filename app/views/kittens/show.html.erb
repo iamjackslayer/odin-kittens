@@ -1,0 +1,8 @@
+<h1>Your kitten</h1>
+Name: <%= @kitten.name %><br>
+Age: <%= @kitten.age %><br>
+Cuteness: <%= @kitten.cuteness %><br>
+Softness: <%= @kitten.softness %><br>
+<%= form_for :kitten, url: {action: :destroy}, id: params[:id], method: :delete do |f| %>
+	<%= f.submit("delete") %>
+<% end %>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OdinKittens</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<% if !flash.empty? %>
+	  	<% flash.each do |k,v| %>
+	  	<%= k.capitalize %>! <%= v %>
+	  	<% end %>
+  	<% end %>
+
+  	<%= link_to 'home', '/kittens/index' %>
+    <%= link_to 'create', '/kitten/new' %>
+    <%= yield %>
+  </body>
+</html>

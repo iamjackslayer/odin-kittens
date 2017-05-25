@@ -1,0 +1,12 @@
+<h1>All kittens</h1>
+<% @kittens.each do |kitten| %>
+	<p>Name: <%= kitten.name %></p>
+	<p>Age: <%= kitten.age %></p>
+	<p>Cuteness: <%= kitten.cuteness %></p>
+	<p>Softness: <%= kitten.softness %></p>
+	<%= link_to('edit kitten', action: :edit, id: kitten.id) %>
+	<%= form_for("kitten", url:{action: :destroy, id: kitten.id}, method: :delete) do |f| %>
+	<%= f.submit("delete") %>
+	<% end %>
+	<br>
+<% end %>

@@ -1,0 +1,5 @@
+<h1>Editing an existing kitten</h1>
+<%= render 'form' %>
+<%= form_for :kitten, url:{action: :destroy, id: params[:id]}, method: :delete do |f| %>
+	<%= f.submit("delete") %>
+<% end %>

@@ -1,0 +1,8 @@
+<%= form_for @kitten, *@form_url_options do |f| %>
+<%= f.hidden_field(:id, value: @kitten.id) %>
+Name: <%= f.text_field(:name) %><br>
+Age: <%= f.select(:age, options_for_select(@age_options)) %><br>
+Cuteness: <%= f.text_field(:cuteness) %><br>
+Softness: <%= f.text_field(:softness) %><br>
+<%= f.submit(:submit) %>
+<% end %>
